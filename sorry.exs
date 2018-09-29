@@ -93,4 +93,6 @@ defmodule Thing do
   end
 end
 
-IO.inspect(Thing.my_func(%{}))
+%{}
+|> Thing.my_func()
+|> IO.inspect()
