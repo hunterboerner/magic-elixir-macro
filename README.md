@@ -1,6 +1,10 @@
 # Magic Elixir Macro
 
-The Elixir macro found in `sorry.exs` allows you to call functions without specifying the arguments (as long as the name matches a local variable).
+The Elixir macro found in `magic.ex` allows you to call functions without specifying the arguments (as long as the name matches a local variable).
+
+> A module that will turn functions annotated with `@replace :true` into
+  functions with an additonal argument and then add arguments to zero arity
+  function calls for functions that require arguments.
 
 ## Example
 ```elixir

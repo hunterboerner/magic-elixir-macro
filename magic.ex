@@ -1,7 +1,10 @@
-# A module that will turn functions annotated with `@replace :true` into
-# functions with an additonal argument and then add arguments to zero arity
-# function calls for functions that require arguments.
 defmodule Magic do
+  @moduledoc """
+  A module that will turn functions annotated with `@replace :true` into
+  functions with an additonal argument and then add arguments to zero arity
+  function calls for functions that require arguments.
+  """
+
   defmacro __using__(_env) do
     quote do
       Module.register_attribute(__MODULE__, :replace_register, accumulate: true)
