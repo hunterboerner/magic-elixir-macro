@@ -62,37 +62,3 @@ defmodule Magic do
     end
   end
 end
-
-defmodule Thing do
-  use Magic
-
-  @replace true
-  def my_func() do
-    user_id = :foo
-    password = %{plaintext: "lol ok"}
-    object = new_arg
-
-    object = put_user_id()
-    arg = :bar
-
-    object = put_another()
-    dangerous_function()
-  end
-
-  defp put_user_id(object, user_id) do
-    Map.put(object, :user_id, user_id)
-  end
-
-  defp put_another(object, arg) do
-    Map.put(object, :arg, arg)
-  end
-
-  defp dangerous_function(password, object) do
-    # TODO: don't deploy to prod
-    Map.put(object, :password, password)
-  end
-end
-
-%{}
-|> Thing.my_func()
-|> IO.inspect()
